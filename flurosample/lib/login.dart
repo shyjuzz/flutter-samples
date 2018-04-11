@@ -25,7 +25,7 @@ class LoginState extends State<Login>{
                 child: const Text('Go to Home'),
                 onPressed: () {
                   var bodyJson = '{"buyerId":1281,"orgId":3041}';
-                  router.navigateTo(context, '/login/$bodyJson');
+                  router.navigateTo(context, '/home/$bodyJson');
                   // Perform some action
                 },
               )),
