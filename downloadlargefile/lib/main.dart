@@ -32,7 +32,11 @@ class DownloadApp extends StatefulWidget {
 }
 
 class _DownloadAppState extends State<DownloadApp> {
-  final imgUrl = "https://unsplash.com/photos/iEJVyyevw-U/download?force=true";
+  final imgUrl = 'http://knockapp.org/solvedquestionpapers/SEC_ASSISTANT_2018.pdf';
+  // 'http://www.brilliancecollege.com/uploads/previous_qp/337/1810131539429829ap-a.pdf';
+
+  //'https://drive.google.com/open?id=1wSTE4U3AUKfMgRoGoyj-EB9gKUcZnmQP';
+      //"https://unsplash.com/photos/iEJVyyevw-U/download?force=true";
   bool downloading = false;
   var progressString = "";
   Future<Directory> _externalDocumentsDirectory;
@@ -102,8 +106,10 @@ class _DownloadAppState extends State<DownloadApp> {
     //var dir = await getApplicationDocumentsDirectory();
     var dir = await getExternalStorageDirectory();
     print(dir.path);
+//    final directory = await Directory.fromUri(dir);
+    //var myDir = new Directory('myDir');
 
-    await dio.download(imgUrl, '${dir.path}/myimage.jpg',
+    await dio.download(imgUrl, '${dir.path}/ques.pdf',
     onProgress: (rec,total){
       print("Rec: $rec , Total: $total");
 
