@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "257620627521",
+    "firebase_url": "https://dailymot-f60c7.firebaseio.com",
+    "project_id": "dailymot-f60c7",
+    "storage_bucket": "dailymot-f60c7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:257620627521:android:7d2d4842c9a70a89",
+        "android_client_info": {
+          "package_name": "com.lifetips.dailymot"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "257620627521-28se188m1tv11lno9r7p4trdhhcil6t2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAdAOYCVky56uKWrp36OEPZdJ8XYL977K0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

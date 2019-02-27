@@ -8,25 +8,8 @@ import 'package:image/image.dart' as Im;
 import 'dart:io';
 import 'package:flutter/material.dart';
 
-Future<void> main() async {
-  final FirebaseApp app = await FirebaseApp.configure(
-    name: 'test',
-    options: const FirebaseOptions(
-      googleAppID: '1:257620627521:android:7d2d4842c9a70a89',
-      gcmSenderID: '257620627521',
-      apiKey: 'AIzaSyAdAOYCVky56uKWrp36OEPZdJ8XYL977K0-G72PVU',
-      projectID: 'dailymot-f60c7',
-    ),
-  );
-  final Firestore firestore = Firestore(app: app);
-  await firestore.settings(timestampsInSnapshotsEnabled: true);
-
-  runApp(MaterialApp(
-      title: 'Firestore Example', home: MyHomePage(firestore: firestore)));
-}
-
 class MyHomePage extends StatefulWidget {
-  MyHomePage({this.firestore});
+  MyHomePage(this.firestore);
 
   final Firestore firestore;
 
@@ -96,12 +79,12 @@ class _MyHomePageState extends State<MyHomePage> {
                     width: MediaQuery.of(context).size.width,
                     child: imageFile == null
                         ? Center(
-                            child: new Text('No image selected.'),
-                          )
+                      child: new Text('No image selected.'),
+                    )
                         : new Image.file(
-                            imageFile,
-                            fit: BoxFit.cover,
-                          ),
+                      imageFile,
+                      fit: BoxFit.cover,
+                    ),
                   ),
                 ),
                 new Positioned(
@@ -146,10 +129,10 @@ class _MyHomePageState extends State<MyHomePage> {
         //compressedImage.writeAsBytes(bytes.buffer.asInt8List(), mode: FileMode.write);
         //save to firebase storage
         StorageReference ref =
-            FirebaseStorage.instance.ref().child('userposts').child(imageName);
+        FirebaseStorage.instance.ref().child('userposts').child(imageName);
         StorageUploadTask uploadTask = ref.putFile(compressedImage);
         var downloadUrl =
-            await (await uploadTask.onComplete).ref.getDownloadURL();
+        await (await uploadTask.onComplete).ref.getDownloadURL();
         var _path = downloadUrl.toString();
         return _path;
       }
